@@ -8,11 +8,15 @@
 
   <ItemGroup>
     <Folder Include="Students\Commnads\" />
-    <Folder Include="Students\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="12.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StudentsMicroService.Domain\StudentsMicroService.Domain.csproj" />
+    <ProjectReference Include="..\StudentsMicroService.Infrastructure\StudentsMicroService.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

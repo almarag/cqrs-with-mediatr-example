@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StudentsMicroService.Infrastructure.Entities
 {
     public class Student
     {
+        [Key]
         public int Id { get; set; }
         public DateTime Created { get; set; }
 

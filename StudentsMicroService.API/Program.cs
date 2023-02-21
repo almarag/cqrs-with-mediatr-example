@@ -1,13 +1,20 @@
-var builder = WebApplication.CreateBuilder(args);
+using MediatR;
+using StudentsMicroService.Application;
+using StudentsMicroService.Application.Students.Queries.GetStudentById;
+using StudentsMicroService.Infrastructure;
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(
+    new AssemblyInfrastructure().GetAssembly()
+);
+builder.Services.AddMediatR(cfg => 
+    cfg.RegisterServicesFromAssemblyContaining<AssemblyApplication>()
+);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -15,12 +22,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-
-app.MapGet("/", () =>
+app.MapGet("/Students/{id}", async (IMediator mediator, int id) =>
 {
-    return 0;
+    var query = new GetStudentByIdQuery() { Id = id };
+    return await mediator.Send(query);
 })
-.WithName("Default");
+.WithName("Students");
 
 app.Run();
