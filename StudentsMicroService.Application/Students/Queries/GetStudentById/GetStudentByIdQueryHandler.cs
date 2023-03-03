@@ -1,38 +1,28 @@
 ﻿using AutoMapper;
 using MediatR;
 using StudentsMicroService.Domain.Entities;
+using StudentsMicroService.Infrastructure.Interfaces;
 
 namespace StudentsMicroService.Application.Students.Queries.GetStudentById
 {
     public class GetStudentByIdQueryHandler : IRequestHandler<GetStudentByIdQuery, Domain.Entities.Student>
     {
         private IMapper _mapper;
+        private IStudentRepository _studentRepository;
 
-        public GetStudentByIdQueryHandler(IMapper mapper)
+        public GetStudentByIdQueryHandler(
+            IMapper mapper, 
+            IStudentRepository studentRepository)
         {
             _mapper = mapper;
+            _studentRepository = studentRepository;
         }
 
-        public Task<Student> Handle(GetStudentByIdQuery request, CancellationToken cancellationToken)
+        public async Task<Student> Handle(GetStudentByIdQuery request, CancellationToken cancellationToken)
         {
-            var simulatedDbResponse = new Infrastructure.Entities.Student()
-            {
-                Id = 1,
-                AcademicData = new Infrastructure.Entities.AcademicData()
-                {
-                    StudentId = 1,
-                    Grade = 10
-                },
-                PersonalData = new Infrastructure.Entities.PersonalData()
-                {
-                    StudentId = 1,
-                    Name = "TEST",
-                    Email = "test@example.com",
-                    LastName = "USER"
-                }
-            };
+            var student = await _studentRepository.GetStudent(request.Id);
 
-            return Task.FromResult(_mapper.Map<Domain.Entities.Student>(simulatedDbResponse));
+            return _mapper.Map<Student>(student);
         }
     }
 }

@@ -5,9 +5,9 @@ namespace StudentsMicroService.Infrastructure.EF
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<Student> Students { get; set; }
-        public DbSet<PersonalData> PersonalData { get; set; }
-        public DbSet<AcademicData> AcademicData { get; set; }
+        //public DbSet<Student> Students { get; set; }
+        //public DbSet<PersonalData> PersonalData { get; set; }
+        //public DbSet<AcademicData> AcademicData { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -16,9 +16,9 @@ namespace StudentsMicroService.Infrastructure.EF
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Student>().ToTable("Students");
-            modelBuilder.Entity<PersonalData>().ToTable("PersonalData");
-            modelBuilder.Entity<AcademicData>().ToTable("AcademicData");
+            //modelBuilder.Entity<Student>().ToTable("Students");
+            //modelBuilder.Entity<PersonalData>().ToTable("PersonalData");
+            //modelBuilder.Entity<AcademicData>().ToTable("AcademicData");
         }
 
     }

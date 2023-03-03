@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Students\Commnads\" />
+    <Folder Include="Students\Commnads\CreateAction\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,16 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
 
 namespace StudentsMicroService.Infrastructure.Entities
 {
     public class Student
     {
-        [Key]
-        public int Id { get; set; }
-        public DateTime Created { get; set; }
-
-        [ForeignKey("StudentId")]
-        public virtual PersonalData PersonalData { get; set; }
-        public virtual AcademicData AcademicData { get; set; }
+        [BsonId]
+        public ObjectId _id { get; set; }
+        public int StudentId { get; set; }
+        public PersonalData PersonalData { get; set; }
+        public AcademicData AcademicData { get; set; }
     }
 }

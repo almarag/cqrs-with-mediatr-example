@@ -2,6 +2,8 @@ using MediatR;
 using StudentsMicroService.Application;
 using StudentsMicroService.Application.Students.Queries.GetStudentById;
 using StudentsMicroService.Infrastructure;
+using StudentsMicroService.Infrastructure.Interfaces;
+using StudentsMicroService.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
@@ -12,6 +14,8 @@ builder.Services.AddAutoMapper(
 builder.Services.AddMediatR(cfg => 
     cfg.RegisterServicesFromAssemblyContaining<AssemblyApplication>()
 );
+
+builder.Services.AddTransient<IStudentRepository, StudentRepository>();
 
 var app = builder.Build();
 
