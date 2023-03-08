@@ -1,4 +1,4 @@
-﻿using MongoDB.Bson.IO;
+﻿using Microsoft.EntityFrameworkCore;
 using StudentsMicroService.Infrastructure.Constants;
 using StudentsMicroService.Infrastructure.EF;
 using StudentsMicroService.Infrastructure.Entities;
@@ -26,6 +26,16 @@ namespace StudentsMicroService.Infrastructure.Repositories
 
             _context.Add(newState);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<ICollection<StudentState>> GetAllStates()
+        {
+            return await _context.StudentStates.ToListAsync();
+        }
+
+        public async Task Purge()
+        {
+            await _context.Database.ExecuteSqlRawAsync("DELETE FROM StudentStates");
         }
     }
 }

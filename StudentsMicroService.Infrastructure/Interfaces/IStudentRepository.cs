@@ -10,5 +10,7 @@ namespace StudentsMicroService.Infrastructure.Interfaces
     public interface IStudentRepository : IRepository<StudentState>
     {
         Task<Student> GetStudent(int studentId);
+        Task AddStudent(StudentState student);
+        Task<long> GetLastStudentCount();
     }
 }

@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentsMicroService.Applic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentsMicroService.Infrastructure", "StudentsMicroService.Infrastructure\StudentsMicroService.Infrastructure.csproj", "{0F04A4B7-7739-456F-94BB-EB99E01C293C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsMicroService.Test", "StudentsMicroService.Test\StudentsMicroService.Test.csproj", "{CA42BFAC-84D6-44CC-9BD5-1AA052BEB2F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentsMicroService.Test", "StudentsMicroService.Test\StudentsMicroService.Test.csproj", "{CA42BFAC-84D6-44CC-9BD5-1AA052BEB2F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentMicroService.Sync", "StudentMicroService.Sync\StudentMicroService.Sync.csproj", "{BE4C3F8B-F63E-47E7-A6B5-D3E5A213D540}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{CA42BFAC-84D6-44CC-9BD5-1AA052BEB2F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA42BFAC-84D6-44CC-9BD5-1AA052BEB2F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA42BFAC-84D6-44CC-9BD5-1AA052BEB2F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4C3F8B-F63E-47E7-A6B5-D3E5A213D540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4C3F8B-F63E-47E7-A6B5-D3E5A213D540}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4C3F8B-F63E-47E7-A6B5-D3E5A213D540}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4C3F8B-F63E-47E7-A6B5-D3E5A213D540}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

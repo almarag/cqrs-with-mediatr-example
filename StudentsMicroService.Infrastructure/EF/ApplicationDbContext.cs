@@ -9,7 +9,7 @@ namespace StudentsMicroService.Infrastructure.EF
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=CustomerDB.db;");
+            optionsBuilder.UseSqlite("Data Source=C:\\Projects\\cqrs-with-mediatr-example\\StudentsMicroService.API\\CustomerDB.db;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

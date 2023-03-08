@@ -1,5 +1,4 @@
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using StudentsMicroService.Application;
 using StudentsMicroService.Application.Students.Commnads.AddStudentCommand;
 using StudentsMicroService.Application.Students.Queries.GetStudentById;
